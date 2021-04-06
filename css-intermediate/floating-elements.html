@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Floating Elements</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+            #main{
+                border: 5px solid red;
+                background: green;
+            }
+            
+            .content{
+                background: blue;
+                border: 1px solid gray;
+                width: 200px;
+                height: 200px;
+                margin: 10px;
+                float: right;
+            }
+            .content-zero{
+                background: red;
+                border: 1px solid gray;
+                width: 200px;
+                height: 200px;
+                margin: 10px;
+            }
+
+            .clear{
+                clear: both;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div class="content">
+                Content 1
+            </div>
+            <div class="content">
+                Content 2
+            </div>
+            <div class="content">
+                Content 3
+            </div>
+            <div class="clear">Extra div</div>
+        </div>
+    </body>
+</html>
