@@ -1,0 +1,92 @@
+/********************************
+Universal selector
+*{
+     border: 1px solid red;
+} 
+*/
+
+/********************************
+Text selector
+h1{
+     color: blue;
+} 
+*/
+
+/********************************
+Class selector
+.green{
+    color: green;
+}
+
+p.green{
+    color: green;
+}
+*/
+
+/********************************
+ID Selector
+#header{
+    border: 1px solid red;
+}
+*/
+
+/********************************
+Child Selector
+li>a{
+    color: red;
+    text-decoration: none;
+}*/
+
+/********************************
+Downward Selector
+li a{
+    color: green;
+}*/
+
+/********************************
+Adjacent Sibling Selector
+h1+p{
+    color: red;
+}
+*/
+
+/********************************
+General Sibling Selector
+h1~p{
+    color: pink;
+}
+*/
+
+/********************************
+Inheritance
+body{
+    color: red;
+    border: 1px solid blue;
+}*/
+
+/********************************
+Specificity
+#page p{
+    color: blue !important;
+}
+
+#page p{
+    color: red;
+}
+
+*{
+    color: red;
+}
+
+h2{
+    color: blue;
+}
+
+h2.green{
+    color: green;
+}
+
+h2#yellow{
+    color: yellow;
+}*/
+

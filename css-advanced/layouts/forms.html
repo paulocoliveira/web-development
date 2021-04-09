@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Styling Forms</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/style-forms.css">
+    </head>
+    <body>
+        <h2>Styling Forms</h2>
+        <form>
+            <fieldset>
+                <legend>Contact Details</legend>
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div>
+                    <label for="email">E-mail: </label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div>
+                    <label for="url">URL: </label>
+                    <input type="text" name="url" id="url">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Comments</legend>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message"></textarea>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Remember Me</legend>
+                <div>
+                    <label>
+                        <input class="radio" type="radio" name="remember" id="yes">Yes
+                    </label>
+                    <label>
+                        <input class="radio" type="radio" name="remember" id="no">No
+                    </label>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

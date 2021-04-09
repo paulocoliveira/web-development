@@ -1,0 +1,20 @@
+.box{
+    width: 400px;
+    background: #dedede url(../images/rounding-background.png) repeat-y;
+}
+
+.box h2{
+    padding: 10px 20px 0 20px;
+    background: url(../images/top2.png) no-repeat left top;
+}
+
+.box p{
+    padding: 0 20px;
+    margin-bottom: 0px;
+}
+
+.box .last{
+    background: url(../images/down2.png) no-repeat left bottom;
+    width: 400px;
+    height: 24px;
+}
