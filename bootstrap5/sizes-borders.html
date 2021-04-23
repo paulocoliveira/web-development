@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+        <title>Bootstrap - Sizes and Borders</title>
+    </head>
+    <body style="margin-bottom: 200px;padding: 16px;">
+        
+        <!-- Width Classes -->
+        <div class="bg-primary w-25">width 25%</div>
+        <div class="bg-primary w-50">width 50%</div>
+        <div class="bg-primary w-75">width 75%</div>
+        <div class="bg-primary w-100">width 100%</div>
+        <div class="bg-primary w-auto">width auto</div>
+
+        <br>
+        <br>
+
+        <!-- Height Classes -->
+        <div style="height: 300px;border: 1px solid gray;">
+            <div class="bg-warning d-inline-block h-25">height 25%</div>
+            <div class="bg-warning d-inline-block h-50">height 50%</div>
+            <div class="bg-warning d-inline-block h-75">height 75%</div>
+            <div class="bg-warning d-inline-block h-100">height 100%</div>
+            <div class="bg-warning d-inline-block h-auto">height auto</div>
+        </div>
+
+        <br>
+        <br>
+
+        <!-- Borders
+        border        -> all borders
+        border-top    -> top border
+        border-bottom -> bottom border
+        border-right  -> end border
+        border-left   -> start border
+
+        Border colors
+        border-<color>: primary, secondary, success, 
+            info, warning, danger, light, dark, white
+        -->
+        <div class="bg-white mb-2 border border-primary">all borders</div>
+        <div class="bg-white mb-2 border-top border-secondary">top border</div>
+        <div class="bg-white mb-2 border-bottom border-success">bottom border</div>
+        <div class="bg-white mb-2 border-start border-danger">end border</div>
+        <div class="bg-white mb-2 border-end border-warning">start border</div>
+
+        <br>
+        <br>
+
+        <!-- Border Radius 
+        opções: rounded, rounded-top, rounded-right, 
+                rounded-right, rounded-left, rounded-circle
+        -->
+        <div class="bg-light mb-2 border rounded">rounded</div>
+        <div class="bg-light mb-2 border rounded-top">rounded top</div>
+        <div class="bg-light mb-2 border rounded-bottom">rounded bottom</div>
+        <div class="bg-light mb-2 border rounded-end">rounded end</div>
+        <div class="bg-light mb-2 border rounded-start">rounded start</div>
+        <div class="bg-light mb-2 p-5 border w-25 rounded-circle">rounded circle</div>
+
+        <br>
+        <br>
+    
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+        -->
+    </body>
+</html>
