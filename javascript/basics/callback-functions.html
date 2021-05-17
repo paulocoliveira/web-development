@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            function showArticle(id, callbackSuccess, callbackError){
+                if (false){
+                    callbackSuccess("Callback Functions in JS", "Callback functions are widely used.")
+                }else{
+                    callbackError("Error when retrieving data!")
+                }
+            }
+
+            var callbackSuccess = function(title, description){
+                document.write("<h1>" + title + "</h1>")
+                document.write("<h />")
+                document.write("<p>" + description + "</p>")
+            }
+
+            var callbackError = function(error){
+                document.write("<p><b>Error: </b>" + error + "</p>")
+            }
+
+            showArticle(1, callbackSuccess, callbackError)
+            
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

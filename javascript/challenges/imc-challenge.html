@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ABC Challenge</title>
+        <script>
+            var status
+            var name = prompt("Type your name: ")
+            var height = prompt("Type your height: ")
+            var weight = prompt("Type your weight: ")
+            height = parseFloat(height)
+            weight = parseFloat(weight)
+            height /= 100
+            m = (weight / (height * height)).toFixed(2)
+            if (m < 16){
+                status = "Very severe underweight"
+            }else if (m >= 16 && m <= 16.99){
+                status = "Severe low weight"
+            }else if (m >= 17 && m <= 18.49){
+                status = "Underweight"
+            }else if (m >= 18.50 && m <= 24.99){
+                status = "Normal weight"
+            }else if (m >= 25 && m <= 29.99){
+                status = "Overweight"
+            }else if (m >= 30 && m <= 34.99){
+                status = "Obesity grade I"
+            }else if (m >= 35 && m <= 39.99){
+                status = "Obesity grade II"
+            }else if (m >= 40){
+                status = "Obesity grade III"
+            }
+
+            document.write("<h1><em>" + name + "</em> your body mass index is <em>" + 
+                            m + "</em> being classified as <em>" + status + "</em></h1>")
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
