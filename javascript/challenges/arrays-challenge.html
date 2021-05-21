@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            var objects = Array('Chair', 'Printer', 'Fork')
+
+            function addElement(){
+                var text = document.getElementById("text_field").value
+                if (text == ""){
+                    alert("Please, inform a valid value!")
+                }else if (objects.indexOf(text) != -1){
+                    alert("Object already added!")
+                }else{
+                    objects.push(text)
+                    document.getElementById("text_field").value = ""
+                    console.log(objects)
+                }
+            }
+
+            function sortArray(){
+                objects.sort()
+                console.log(objects)
+            }
+            
+        </script>
+    </head>
+    <body>
+        <input id="text_field" type="text">
+        <button onclick="addElement()">Add</button>
+        <button onclick="sortArray()">Sort</button>
+    </body>
+</html>

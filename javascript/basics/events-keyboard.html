@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            function action1(){
+                alert("Triggered Event 1")
+            }
+
+            function action2(){
+                alert("Triggered Event 2")
+            }
+            
+            function action3(){
+                alert("Triggered Event 3")
+            }          
+
+        </script>
+    </head>
+    <body>
+
+        <input onkeydown="action1()" type="text">
+        <br>
+        <input onkeyup="action2()" type="text">
+        <br>
+        <input onkeypress="action3()" type="text">
+
+    </body>
+</html>

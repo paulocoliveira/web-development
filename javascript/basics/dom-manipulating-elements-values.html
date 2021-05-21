@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            function distributesCharacter(){
+                var character = document.getElementById("entrance").value
+                console.log(character)
+                document.getElementById("entrance").value = ""
+                character.trim()
+                switch(character){
+                    case '0':
+                    case '1':
+                    case '2':
+                    case '3':
+                    case '4':
+                    case '5':
+                    case '6':
+                    case '7':
+                    case '8':
+                    case '9':
+                        document.getElementById("only_numbers").value += character;
+                        break;
+                    default:
+                        document.getElementById("only_letters").value += character;
+
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <input onkeyup="distributesCharacter()" id="entrance" type="text" placeholder="Type a character here">
+        <hr>
+        <span>Letters</span>
+        <input type="text" disabled="disabled" id="only_letters">
+        <span>Numbers</span>
+        <input type="text" disabled="disabled" id="only_numbers">
+    </body>
+</html>

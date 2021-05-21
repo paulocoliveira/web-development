@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            var fruits_array = Array()
+            fruits_array.push("Banana")
+            fruits_array.push("Apple")
+            fruits_array.push("Strawberry")
+            fruits_array.push("Grape")
+            console.log(fruits_array)
+            console.log(fruits_array.sort())
+
+            var numbers_array = Array()
+            numbers_array.push(12)
+            numbers_array.push(40)
+            numbers_array.push(3)
+            numbers_array.push(7)
+            numbers_array.push(19)
+            numbers_array.push(1)
+            console.log(numbers_array)
+            console.log(numbers_array.sort(sort_numbers))
+
+            function sort_numbers(a, b){
+                return a - b
+                // < 0 a ordered before b
+                // > 0 b ordered before a
+                // = order is kept
+            }
+            
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

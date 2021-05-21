@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            function action1(){
+                console.log("Triggered Event 1")
+            }
+
+            function action2(){
+                console.log("Triggered Event 2")
+            }     
+
+            function action3(){
+                console.log("Triggered Event 3")
+            } 
+
+        </script>
+    </head>
+    <body>
+        <input type="text" onfocus="action1()" onblur="action2()">
+        <select onchange="action3()">
+            <option>-- Select --</option>
+            <option value="1">-- Option 1 --</option>
+            <option value="2">-- Option 2 --</option>
+        </select>
+
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ABC Challenge</title>
+        <script>
+
+            var number1 = prompt("Type number 1: ")
+            var op = prompt("Type an operation (sum or sub): ")
+            var number2 = prompt("Type number 2: ")
+
+            number1 = parseInt(number1)
+            number2 = parseInt(number2)
+
+            var result = calc(number1, number2, op)
+            document.write("Result is: " + result)
+
+            function calc(num1, num2, operation){
+                if (operation == "sum"){
+                    return num1 + num2
+                }else if (operation == "sub"){
+                    return num1 - num2
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

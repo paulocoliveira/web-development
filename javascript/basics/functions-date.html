@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            
+            var date = new Date()
+
+            document.write(date.getDate() + " / " + (date.getMonth() + 1) + " / " + date.getFullYear())
+            document.write("<br>")
+
+            document.write("<hr>")
+
+            //add and remove days
+            document.write(date.toString())
+            document.write("<br>")
+
+            date.setDate(date.getDate() + 30)
+            document.write(date.toString())
+            document.write("<br>")
+
+            date.setDate(date.getDate() - 32)
+            document.write(date.toString())
+            document.write("<br>")
+
+            document.write("<hr>")
+
+            //add and remove months
+            date.setMonth(date.getMonth() + 2)
+            document.write(date.toString())
+            document.write("<br>")
+
+            date.setMonth(date.getMonth() - 1)
+            document.write(date.toString())
+            document.write("<br>")
+
+            document.write("<hr>")
+
+            //add and remove years
+            date.setFullYear(date.getFullYear() + 2)
+            document.write(date.toString())
+            document.write("<br>")
+
+            date.setFullYear(date.getFullYear() - 1)
+            document.write(date.toString())
+            document.write("<br>")
+
+            document.write("<hr>")
+
+            //calculate between two dates
+            
+            //15/01/2017
+            var date1 = new Date(2017, 0, 15)
+
+            //23/02/2017
+            var date2 = new Date(2017, 1, 23)
+
+            document.write(date1.toString())
+            document.write("<br>")
+            document.write(date2.toString())
+
+            document.write("<hr>")
+
+            //convert
+            document.write(date1.getTime())
+            document.write("<br>")
+            document.write(date2.getTime())
+            document.write("<br>")
+            
+            document.write("<hr>")
+
+            //difference
+            var milisecondsDiff = Math.abs(date1.getTime() - date2.getTime())
+            var milisecondsByDay = 1*24*60*60*1000
+            document.write(milisecondsDiff)
+            document.write("<br>")
+            document.write("Diff between date1 and date2 is: " + Math.ceil(milisecondsDiff / milisecondsByDay) + " days")
+            document.write("<br>")
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
