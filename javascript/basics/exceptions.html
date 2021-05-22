@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            var video = Array()
+            video[1] = Array()
+            video[1]['name'] = "Titanc"
+            video[1]['category'] = "Tragedy"
+
+            function getVideo(video){
+                try{
+                    console.log(video[0]['name'])
+                }catch(e){
+                    dealWithError(e)
+                    console.log("Video is not available!")
+                }finally{
+                    console.log("Finshed!")    
+                }
+                                
+                console.log("Video retrieved succesfully!")
+            }
+
+            function dealWithError(e){
+                console.log(e)
+            }
+
+            getVideo(video)
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

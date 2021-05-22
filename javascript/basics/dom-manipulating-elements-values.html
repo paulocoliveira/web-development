@@ -20,10 +20,10 @@
                     case '7':
                     case '8':
                     case '9':
-                        document.getElementById("only_numbers").value += character;
+                        document.getElementById("onlyNumbers").value += character;
                         break;
                     default:
-                        document.getElementById("only_letters").value += character;
+                        document.getElementById("onlyLetters").value += character;
 
                 }
             }
@@ -34,8 +34,8 @@
         <input onkeyup="distributesCharacter()" id="entrance" type="text" placeholder="Type a character here">
         <hr>
         <span>Letters</span>
-        <input type="text" disabled="disabled" id="only_letters">
+        <input type="text" disabled="disabled" id="onlyLetters">
         <span>Numbers</span>
-        <input type="text" disabled="disabled" id="only_numbers">
+        <input type="text" disabled="disabled" id="onlyNumbers">
     </body>
 </html>

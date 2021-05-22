@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <script>
+            var employeeList = ["Viviane", "Rosângela", "Miguel", "Lucas", "Fernanda"]
+            console.log(employeeList)
+            employeeList.forEach(function(value, index, array){
+                console.log("Index: " + index + " Value: " + value)
+                if(value == "Lucas"){
+                    array[index] = "Paulo"
+                }
+                console.log(array)
+            })
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

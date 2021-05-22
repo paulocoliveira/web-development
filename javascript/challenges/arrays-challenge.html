@@ -7,14 +7,14 @@
             var objects = Array('Chair', 'Printer', 'Fork')
 
             function addElement(){
-                var text = document.getElementById("text_field").value
+                var text = document.getElementById("textField").value
                 if (text == ""){
                     alert("Please, inform a valid value!")
                 }else if (objects.indexOf(text) != -1){
                     alert("Object already added!")
                 }else{
                     objects.push(text)
-                    document.getElementById("text_field").value = ""
+                    document.getElementById("textField").value = ""
                     console.log(objects)
                 }
             }
@@ -27,7 +27,7 @@
         </script>
     </head>
     <body>
-        <input id="text_field" type="text">
+        <input id="textField" type="text">
         <button onclick="addElement()">Add</button>
         <button onclick="sortArray()">Sort</button>
     </body>

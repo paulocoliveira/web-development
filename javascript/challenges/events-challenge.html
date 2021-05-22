@@ -4,22 +4,22 @@
         <meta charset="utf-8">
         <title>ABC Challenge</title>
         <script>
-            function change_bg(){
-                document.getElementById("text_field").style.backgroundColor = "#FFFF00";
+            function changeBg(){
+                document.getElementById("textField").style.backgroundColor = "#FFFF00";
             }
 
-            function change_bg_conditional(){
-                var text = document.getElementById("text_field").value;
+            function changeBgConditional(){
+                var text = document.getElementById("textField").value;
                 if (text.length < 3){
-                    document.getElementById("text_field").style.backgroundColor = "#FF0000";
+                    document.getElementById("textField").style.backgroundColor = "#FF0000";
                 }else{
-                    document.getElementById("text_field").style.backgroundColor = "#00FF00";
+                    document.getElementById("textField").style.backgroundColor = "#00FF00";
                 }
             }
 
         </script>
     </head>
     <body>
-        <input id="text_field" onfocus="change_bg()" onblur="change_bg_conditional()" type="text">
+        <input id="textField" onfocus="changeBg()" onblur="changeBgConditional()" type="text">
     </body>
 </html>
