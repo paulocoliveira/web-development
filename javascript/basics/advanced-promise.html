@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+
+    <button id="loadButton">Load Photos</button>
+
+    <script>
+
+        function showResults(data){
+            console.log(data[0])
+        }
+
+        function showError(){
+            console.log("Ops, an error has occured!")
+        }
+
+        const loadButton = document.querySelector("#loadButton")
+        loadButton.onclick = () => 
+            loadPhotos()
+                .then(showResults)
+                .catch(showError)
+
+        function loadPhotos(){
+            return new Promise((resolve, reject) => {
+                const xhttp = new XMLHttpRequest()
+        
+                xhttp.onreadystatechange = function(){
+                    if (this.readyState == 4 && this.status == 200){
+                        const response = JSON.parse(this.responseText)
+                        resolve(response)
+                    }           
+                    
+                    if (this.status === 404){
+                        reject()
+                    }
+                }
+
+                xhttp.open("GET", "https://jsonplaceholder.typicode.com/photos", true)
+                xhttp.send()
+            })
+        }
+
+    </script>
+</body>
+</html>

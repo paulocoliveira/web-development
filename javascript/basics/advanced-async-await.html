@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async/Await</title>
+</head>
+<body>
+
+    <button id="loadButton">Load Photos</button>
+
+    <script>
+
+        function parseToJson(response){
+            return response.json()
+        }
+
+        function showResults(data){
+            console.log(data)
+        }
+
+        function showError(){
+            console.log("Ops, an error has occured!")
+        }
+
+        const loadButton = document.querySelector("#loadButton")
+        loadButton.onclick = buttonClick
+
+        async function buttonClick(){
+            const data = await fetch("https://jsonplaceholder.typicode.com/photos")
+                .then(parseToJson)
+                .catch(showError)
+
+            console.log(data)
+        }
+
+        
+
+    </script>
+</body>
+</html>

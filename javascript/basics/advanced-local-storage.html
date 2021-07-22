@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <script>
+        const tasks = [
+            {task: 'study js'},
+            {task: 'study node.js'},
+            {task: 'study react.js'}
+        ]
+        
+        const jsonTasks = JSON.stringify(tasks)
+
+        localStorage.setItem('tasks', jsonTasks)
+
+        const savedTaskList = localStorage.getItem('tasks')
+
+        const jsonTaskList = JSON.parse(savedTaskList)
+
+        console.log(jsonTaskList)
+        
+
+    </script>
+</body>
+</html>

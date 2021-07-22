@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+        }
+        h1{
+            font-size: 40px;
+            margin-left: 40px;
+        }
+        .green{
+            background-color: chartreuse;
+        }
+        .red{
+            background-color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="counter">0</h1>
+    <button id="minus">-</button>
+    <button id="plus">+</button>
+    <script>
+        let contador = document.querySelector("#counter")
+        let menos = document.querySelector("#minus")
+        let mais = document.querySelector("#plus")
+        let mais_interval
+        let menos_interval
+
+        mais.addEventListener('click', function(){
+            clearInterval(menos_interval)
+            mais_interval = setInterval(() => {
+                contador.innerHTML = parseInt(contador.innerHTML) + 1    
+            }, 100);
+            mais.classList.add("green")
+            menos.classList.remove("red")
+        })
+
+        menos.addEventListener('click', function(){
+            clearInterval(mais_interval)
+            menos_interval = setInterval(() => {
+                contador.innerHTML = parseInt(contador.innerHTML) - 1
+            }, 100);
+            menos.classList.add("red")
+            mais.classList.remove("green")
+        })
+
+    </script>
+</body>
+</html>

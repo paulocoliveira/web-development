@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxes{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box{
+            width: 25%;
+            background-color: rgb(223, 222, 222);
+            border-radius: 10px;
+            border: 3px solid white;
+            box-shadow: 3px 3px black;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h2{
+            font-weight: 100;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="boxes" class="boxes">
+        
+    </div>    
+
+    <script>
+        let listaAtores = [
+            {
+                nome: 'Keanu Reeves',
+                personagem: 'Neo',
+                filme: 'The Matrix'
+            },
+            {
+                nome: 'David Prowse',
+                personagem: 'Darth Vader',
+                filme: 'Star Wars Episódios IV-VI'
+            },
+            {
+                nome: 'Bruce Wayne',
+                personagem: 'Batman',
+                filme: 'Batman - O Início'
+            }
+        ]
+
+            for (let ator of listaAtores){
+                document.querySelector('#boxes').innerHTML += `
+                <div class="box">
+                <h1>${ator.nome}</h1>
+                <h2>Interpreta o personagem ${ator.personagem} no filme ${ator.filme}.</h2>
+                </div>
+                `
+            }
+
+    </script>
+</body>
+</html>

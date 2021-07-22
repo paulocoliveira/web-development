@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            border: 1px solid red;
+        }
+
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="formCadastro" action="">
+    
+        <label>Estado</label>
+        <select name="estado" id="estado">
+            <option value="no">-- Selecione --</option>
+            <option value="sp">São Paulo</option>
+            <option value="pe">Pernambuco</option>
+        </select>
+        <span class="error"></span>
+            
+        <br>
+        <br>
+
+        <label>Cidade</label>
+        <select name="cidade" id="cidade">
+            <option value="no">-- Selecione a Cidade--</option>
+        </select>
+        <span class="error"></span>
+
+        <br>
+        <br>
+
+        <button type="submit" id="btn">Enviar</button>
+    </form>
+
+    <script>
+        let cidades = {
+            sp: ['Jundiaí', 'Campinas', 'Limeira', 'Atibaia', 'Aparecida', 'Campos de Jordão'],
+            pe: ['Recife', 'Garanhuns', 'Camaragibe', 'Olinda', 'Caruaru', 'Petrolina']
+        }
+
+        let estado = document.querySelector("#estado")
+        let cidade = document.querySelector("#cidade")
+        let btn = document.querySelector("#btn")
+
+        estado.addEventListener('change', function(){
+            let option = estado.options[estado.selectedIndex].value
+            cidade.innerHTML = `<option value="no">-- Selecione a Cidade--</option>`
+            if (option != "no"){
+                estado.classList.remove("red")
+                estado.nextSibling.nextSibling.innerHTML = ""
+                cidade.classList.remove("red")
+                cidade.nextSibling.nextSibling.innerHTML = ""
+                for (city of cidades[option]){
+                    cidade.innerHTML += `<option value=${city}>${city}</option>`
+                }
+            }
+        })
+
+        cidade.addEventListener('change', function(){
+            let option = cidade.options[cidade.selectedIndex].value
+            if (option != "no"){
+                estado.classList.remove("red")
+                estado.nextSibling.nextSibling.innerHTML = ""
+                cidade.classList.remove("red")
+                cidade.nextSibling.nextSibling.innerHTML = ""
+                
+            }
+        })
+
+        btn.addEventListener('click', function(){
+            let estado_option = estado.options[estado.selectedIndex].value
+            let cidade_option = cidade.options[cidade.selectedIndex].value          
+            
+            if (estado_option == "no"){
+                estado.classList.add("red")
+                estado.nextSibling.nextSibling.innerHTML = "Selecione o estado"
+            }
+            
+            if (cidade_option == "no"){
+                cidade.classList.add("red")
+                cidade.nextSibling.nextSibling.innerHTML = "Selecione a cidade"
+            }
+        })
+
+        let formulario = document.querySelector("#formCadastro")
+
+        formulario.onsubmit = function(){
+            console.log("deu bom")
+        }
+
+    </script>
+</body>
+</html>

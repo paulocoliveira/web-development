@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce</title>
+</head>
+<body>
+    <script>
+        const customers = [
+            {name: "Thiago", score: 34},
+            {name: "Jaqueline", score: 38},
+            {name: "Sarah", score: 80},
+            {name: "Clara", score: 50},
+            {name: "Sophia", score: 98},
+        ]
+
+
+        const finalCustomer = customers.reduce((acc, curr) => {
+            if (curr.score >= 50){
+                acc.pass.push(curr)
+            }else{
+                acc.fail.push(curr)
+            }
+
+            return acc
+
+        }, {
+            pass: [],
+            fail: []
+        })
+
+        console.log(finalCustomer)
+
+        const numbers = [1, 2, 3, 4]
+
+        const finalNumbers = numbers.reduce((acc, curr) => {
+            acc += `${curr + 1} `
+            return acc
+        }, "")
+
+        console.log(finalNumbers)
+
+    </script>
+</body>
+</html>
