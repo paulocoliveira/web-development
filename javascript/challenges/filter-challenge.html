@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Challenge</title>
+</head>
+<body>
+    <script>
+        let passGrade = 7
+        
+        let students = [{
+                name: 'Maria',
+                lastName: 'da Silva',
+                grade: 10
+            },
+            {
+                name: 'José',
+                lastName: 'Moreira',
+                grade: 4
+            },
+            {
+                name: 'Paulo',
+                lastName: 'Henrique',
+                grade: 7
+            },
+            {
+                name: 'Pedro',
+                lastName: 'Souza',
+                grade: 5
+            }]
+
+        const studentsMap = students.filter(student => student.grade >= passGrade)
+
+        console.log(studentsMap)
+        
+    </script>  
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resuls Challenge</title>
+</head>
+<body>
+    <label>Type a message to filter the students: </label>
+    <input type="text" name="grade" id="grade">
+    <button id="filterButton">Filter</button>
+    <ul id="result"></ul>
+    <p id="error"></p>
+    
+    <script>
+        const students = [
+            {
+                name: 'Maria',
+                lastName: 'da Silva',
+                grade: 10,
+            },
+            {
+                name: 'José',
+                lastName: 'Moreira',
+                grade: 4,
+            },
+            {
+                name: 'Paulo',
+                lastName: 'Henrique',
+                grade: 7,
+            },
+            {
+                name: 'Sara',
+                lastName: 'Souza',
+                grade: 5,
+            },
+            {
+                name: 'Clara',
+                lastName: 'Barbosa',
+                grade: 9,
+            },
+            {
+                name: 'Rodrigo',
+                lastName: 'Barros',
+                grade: 4,
+            },
+            {
+                name: 'Renato',
+                lastName: 'Barros',
+                grade: 7,
+            },
+            {
+                name: 'Andrea',
+                lastName: 'Batista',
+                grade: 6,
+            },
+            {
+                name: 'Carla',
+                lastName: 'Campos',
+                grade: 3,
+            },
+        ]
+
+        
+        inputGrade = document.querySelector("#grade")
+        filterButton = document.querySelector("#filterButton")
+        list = document.querySelector("#result")
+        errorMessage = document.querySelector("#error")
+        
+        function filterGrades(){
+            const result = students.filter(student => student.grade === parseInt(inputGrade.value))
+
+            if (result.length !== 0){
+                list.innerHTML = ""
+                result.forEach(function(student){
+                    errorMessage.innerHTML = ""
+                    list.innerHTML += `
+                        <li>${student.name} ${student.lastName} | Grade: ${student.grade}</li>
+                    `
+                })
+            }else{
+                list.innerHTML = ""
+                errorMessage.innerHTML = "There is no student with this grade!"
+            }
+        }
+        
+        filterButton.onclick = filterGrades
+        
+    </script>  
+</body>
+</html>

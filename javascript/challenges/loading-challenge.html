@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Challenge</title>
+</head>
+<body>
+    
+    <input type="text" name="message" id="message" placeholder="Type a message">
+    <button id="sendButton">Send</button>
+    <img id="loading" src="loading.gif" width="17px" style="display:none">
+    <p id="messageText"></p>
+
+    <script>
+
+        inputMessage = document.querySelector("#message")
+        sendButton = document.querySelector("#sendButton")
+        loadingImg = document.querySelector("#loading")
+        messageText = document.querySelector("#messageText")
+
+
+        sendButton.onclick = () => 
+            sendMessage(inputMessage.value)
+                .then(msg => {
+                    inputMessage.style.display = "none"
+                    loadingImg.style.display = "none"
+                    messageText.innerHTML = msg
+                })
+
+        function sendMessage(message){
+            return new Promise((resolve, reject) => {
+                sendButton.style.display = "none"
+                loadingImg.style.display = "inline"
+                setTimeout(function(){
+                    resolve(message)
+                }, 3000)
+            })
+        }
+        
+    </script>  
+</body>
+</html>

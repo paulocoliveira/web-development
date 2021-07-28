@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Challenge</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name: 'Maria',
+            lastName: 'da Silva',
+            grades: [7, 10, 8, 5, 7, 9],
+        }
+
+        const totalGrade = student.grades.reduce((acc, curr) => {
+            console.log(curr)
+            console.log(acc)
+            acc += curr
+            return acc
+        }, 0)
+
+        numberOfTwoMonths = student.grades.length
+        finalAverage = totalGrade / numberOfTwoMonths
+
+        console.log(`${student.name}'s average was ${finalAverage.toFixed(2)} to the total of ${numberOfTwoMonths} two months`)
+        
+    </script>  
+</body>
+</html>
