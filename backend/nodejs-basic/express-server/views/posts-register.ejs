@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs')%>
+</head>
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+    <section class="container">
+        <%- include('partials/navbar.ejs') %>
+        <article class="content">
+            <h1>Register Posts</h1>
+
+            <form action="/save-post" method="POST">
+                <div>
+                    <label>Title</label>
+                    <input name="title" type="text" placeholder="Type the post title">
+                </div>
+                <div>
+                    <label>Text</label>
+                    <textarea name="text"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+            
+            <% if(registered) { %>
+                <span class="ok-message">Registered successfully!!!</span>
+            <% } %>
+
+        </article>
+    </section>
+
+    <%- include('partials/footer.ejs') %>
+    <%- include('partials/foot.ejs') %>
+</body>
+</html>
