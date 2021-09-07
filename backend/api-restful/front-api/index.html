@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Products List</h2>
+    <ul id="products-list"></ul>
+
+    <hr>
+
+    <h2>Register Product</h2>
+    <form id="form">
+        <div>
+            <label>Name</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label>Brand</label>
+            <input type="text" name="brand">
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" name="price">
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+
+    <div class="hidden" id="edit">
+        <br><hr>
+        <h2>Update Product</h2>
+        <form id="formEdit">
+            <input type="hidden" name="id">
+            <div>
+                <label>Name</label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label>Brand</label>
+                <input type="text" name="brand">
+            </div>
+            <div>
+                <label>Price</label>
+                <input type="text" name="price">
+            </div>
+            <div>
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const API_URL = "http://localhost:8080/api/products"
+        
+        const edit = document.querySelector("#edit")
+        const form = document.querySelector("#form")
+        const formEdit = document.querySelector("#formEdit")
+        const productsList = document.querySelector("#products-list")
+
+        //add event click at delete button
+        function addEventAtDeleteButton(){
+            const deleteButtons = document.querySelectorAll(".delete-button")
+            deleteButtons.forEach(button => {
+                button.onclick = function(e){
+                    e.preventDefault()
+
+                    const id = this.dataset.id
+                    
+                    fetch(`${API_URL}/${id}`,{
+                        method: "DELETE"
+                    }).then(response => {
+                        response.json().then(data => {
+                            if (data.message == "success"){
+                                retrieveProductList()
+                                alert("Deleted Successfully!")
+                            } else{
+                                alert("Ops, an error has occured! Try again!")
+                            }
+                        })
+                    })
+                }
+            })
+        }
+
+        //add event click at edit button
+        function addEventAtEditButton(){
+            const editButtons = document.querySelectorAll(".edit-button")
+            editButtons.forEach(button => {
+                button.onclick = function(e){
+                    e.preventDefault()
+                    edit.classList.remove("hidden")
+
+                    const id = this.dataset.id
+                    const name = this.dataset.name
+                    const brand = this.dataset.brand
+                    const price = this.dataset.price
+
+                    document.forms["formEdit"].id.value = id
+                    document.forms["formEdit"].name.value = name
+                    document.forms["formEdit"].brand.value = brand
+                    document.forms["formEdit"].price.value = price
+                }
+            })
+        }
+
+        //get products list
+                
+        function retrieveProductList(){
+            fetch(API_URL).then(response => {
+                response.json().then(data => {
+                    const productsHtml = data.map(product => `
+                        <li>
+                            ${product.name} - ${product.brand} - ${product.price} - 
+                            <a href = "#" class="edit-button" data-id="${product._id}" data-name="${product.name}" data-brand="${product.brand}" data-price="${product.price}"">[edit]</a>
+                            <a href = "#" class="delete-button" data-id="${product._id}">[delete]</a>
+                        </li>
+                    `).join('')
+
+                    productsList.innerHTML = productsHtml
+                    
+                    addEventAtDeleteButton()
+                    addEventAtEditButton()
+                })
+            })
+        }
+
+        retrieveProductList()
+        
+        
+        //when registering a product
+        form.onsubmit = function(e){
+            e.preventDefault()
+
+            const name = document.forms["form"].name.value
+            const brand = document.forms["form"].brand.value
+            const price = document.forms["form"].price.value
+
+            fetch(API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name, 
+                    brand,
+                    price
+                })
+            }).then(response => {
+                response.json().then(data => {
+                    if (data.message == "success"){
+                        form.reset()
+                        retrieveProductList()
+                        alert("Registered Successfully!")
+                    } else{
+                        alert("Ops, an error has occured! Try again!")
+                    }
+                })
+            })
+        }
+    
+        //when updating a product
+        formEdit.onsubmit = function(e){
+            e.preventDefault()
+
+            const id = document.forms["formEdit"].id.value
+            const name = document.forms["formEdit"].name.value
+            const brand = document.forms["formEdit"].brand.value
+            const price = document.forms["formEdit"].price.value
+            
+            fetch(`${API_URL}/${id}`,{
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                        name,
+                        brand,
+                        price
+                    })
+            }).then(response => {
+                response.json().then(data => {
+                    if (data.message == "success"){
+                        formEdit.reset()
+                        edit.classList.add("hidden")
+                        retrieveProductList()
+                        alert("Updated Successfully!")
+                    } else{
+                        alert("Ops, an error has occured! Try again!")
+                    }
+                })
+            })
+        }
+    </script>
+</body>
+</html>
